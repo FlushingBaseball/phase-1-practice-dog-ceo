@@ -1,0 +1,8 @@
+li.selected {
+    color: rgb(255, 203, 59);
+}
+
+
+li.hidden{
+    display: none;
+}
