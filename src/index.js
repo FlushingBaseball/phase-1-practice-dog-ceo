@@ -9,6 +9,8 @@ const dogBreedUl = document.querySelector('#dog-breeds');
 const breedDrop = document.querySelector('#breed-dropdown');
 
 const items = dogBreedUl.getElementsByTagName('li')
+const iterableItems = Array.from(items);
+
 
 fetch(breedUrl)
 .then(resp => resp.json())
@@ -25,7 +27,7 @@ fetch(breedUrl)
             newDogBreed.addEventListener('click', (event) =>{
               //  newDogBreed.className = "selected";
                 newDogBreed.classList.add('selected')
-                newDogBreed.classList.add('shown')
+             //   newDogBreed.classList.add('shown')
 
             })
 
@@ -95,7 +97,8 @@ breedDrop.addEventListener('change', (event) =>{
         for (let i =0; i<items.length; i++){
             console.log(`right now character is ${items[i].textContent.charAt(0)} and the value is ${breedDrop.value}`)
                 if (items[i].textContent.charAt(0) != breedDrop.value){
-                    items[i].remove();
+                    items[i].classList.add('hidden')
+                   // items[i].remove();
                 }
 
 
